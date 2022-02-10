@@ -7,24 +7,26 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
 ```
 
-## R Markdown
+## Data
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+This data was collected by Dr. Kristen Gorman at the Palmer Station, Antarctica LTER. It documents key ecological data (e.g. bill length, bill depth, flipper length) across three penguin species — Chinstrap, Gentoo, and Adelie — across three islands. It contains two data sets: penguins and penguins_raw.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
 
-```{r cars}
-summary(cars)
+```{r step 3}
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+
+#View(penguins_raw)
+dim(penguins_raw)
+colnames(penguins_raw)
+
+?palmerpenguins
+
+# You cannot knit an RMD file with the function Knit because it creates a new window. 
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
