@@ -1,0 +1,13 @@
+name: "my-website"
+navbar:
+  title: "My Penguin Website"
+  left:
+    - text: "Data"
+      href: data.html
+    - text: "Single trait distribution"
+      href: Single_trait_distribution.html
+    - text: "Relationship between multiple traits"
+      href: Relationship_between_multiple_traits.html
+    - text: "Sexual dimorphism"
+      href: Sexual-dimorphism.html
+output_dir: "."
