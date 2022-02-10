@@ -1,0 +1,36 @@
+---
+title: "Data"
+author: "Marissa Garcia"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Data
+
+This data was collected by Dr. Kristen Gorman at the Palmer Station, Antarctica LTER. It documents key ecological data (e.g. bill length, bill depth, flipper length) across three penguin species — Chinstrap, Gentoo, and Adelie — across three islands. It contains two data sets: penguins and penguins_raw.
+
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+```{r step 3}
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+
+#View(penguins_raw)
+dim(penguins_raw)
+colnames(penguins_raw)
+
+?palmerpenguins
+
+# You cannot knit an RMD file with the function Knit because it creates a new window. 
+```

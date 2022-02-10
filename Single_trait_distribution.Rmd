@@ -1,0 +1,50 @@
+---
+title: "Single trait distribution"
+author: "Marissa Garcia"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Single trait distribution
+
+What is the lowest and highest bill lengths do penguins in this dataset have? Do different species have different bill lengths? How much do they overlap?
+
+```{r}
+ggplot(data = penguins) + 
+  geom_boxplot(mapping = aes (x = species, y = bill_length_mm)) +
+  geom_jitter(aes(x = species, y = bill_length_mm), alpha = 0.25, color = "purple")
+
+# It seems that, on average, Chinstrap has higher bill lengths at 49 mm. However, Gentoo had the biggest outlier at 59 mm. Adelie is shortest — the average is 38 mm with an outlier of 32 mm. 
+
+# Different species have different lengths. 
+
+# Chinstrap and Gentoo overlap the most with each other. 
+
+# density plot for overlap 
+# scatter plot 
+
+## cow plot package pastes together two different grids
+```   
+
+```{r}
+ggplot(data = penguins) + 
+  geom_density(mapping = aes(x = bill_length_mm, fill = species), alpha = 0.5)
+
+# I didn't know density plots existed! This is so cool. 
+# I can use density to plot overlap in different values for the same variable. 
+```
+
+```{r}
+ ggplot(data = penguins) +
+  geom_histogram(mapping = aes(x = bill_length_mm, fill=species)) +
+  facet_wrap(~species, nrow=3)
+
+# Use facet_wrap so you can divide up your histogram so it's split up and not overlapping. 
+```
+

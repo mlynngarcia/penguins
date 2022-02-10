@@ -1,0 +1,33 @@
+---
+title: "Relationship between multiple traits"
+author: "Marissa Garcia"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Relationship between multiple traits
+
+For example, what is the relationship between body mass and flipper length in penguins in this dataset? Does this relationship differ between species? Given the same body mass, which species of penguins tend to have the longest flippers?
+
+```{r}
+ggplot(data = penguins, aes(body_mass_g, flipper_length_mm, color = species)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+# In order to color the lines (not just the points), assign a variable to color in the first line of ggplot. 
+
+# Flipper length generally increases with body mass across all three species. 
+# Gentoo penguins tend to have the longest flippers. 
+```
+
+```{r}
+ggplot(data = penguins, mapping = aes(x = body_mass_g, y = flipper_length_mm, shape = island)) + 
+  geom_point(mapping = aes(color = species)) + 
+  geom_smooth(method = "lm")
+```

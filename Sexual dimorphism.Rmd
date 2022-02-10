@@ -1,0 +1,30 @@
+---
+title: "Sexual dimorphism"
+author: "Marissa Garcia"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Sexual dimorphism
+
+For example, what traits are sexually dimorphic in the penguins dataset? Is the level of sexual dimorphism the same in all three penguin species?
+
+```{r}
+ggplot(data = penguins, mapping = aes(x = bill_length_mm, y=bill_depth_mm, color=sex)) +
+  geom_point(size=1) +
+  facet_wrap(~species)
+```
+
+```{r}
+ ggplot(data = penguins, mapping = aes(x=flipper_length_mm, y=sex, color=sex)) +
+  geom_boxplot(outlier.alpha = 0, alpha=0) +
+  geom_jitter(width = 0, size=1) +
+  coord_flip() +
+  facet_wrap(~species)
+```
